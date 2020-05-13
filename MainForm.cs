@@ -23,11 +23,10 @@ namespace areyesram
             _points = Enumerable.Range(0, 200).Select(o => new Point(rnd.Next(100) * 5, rnd.Next(100) * 5)).ToArray();
             FindRectangles();
         }
-
+   
         private void btnLoad_Click(object sender, EventArgs e)
         {
             _points = File.ReadAllLines(@"data\sample.csv")
-                .Distinct()
                 .Select(o =>
                 {
                     var a = o.Split(',');
