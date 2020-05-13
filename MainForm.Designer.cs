@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnGo = new System.Windows.Forms.Button();
+            this.btnRandom = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabGraph = new System.Windows.Forms.TabPage();
             this.pnlCanvas = new System.Windows.Forms.Panel();
@@ -36,6 +36,7 @@
             this.gridPoints = new System.Windows.Forms.DataGridView();
             this.tabRectangles = new System.Windows.Forms.TabPage();
             this.gridRectangles = new System.Windows.Forms.DataGridView();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGraph.SuspendLayout();
             this.tabPoints.SuspendLayout();
@@ -44,15 +45,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridRectangles)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnGo
+            // btnRandom
             // 
-            this.btnGo.Location = new System.Drawing.Point(12, 12);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(75, 23);
-            this.btnGo.TabIndex = 1;
-            this.btnGo.Text = "Go";
-            this.btnGo.UseVisualStyleBackColor = true;
-            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            this.btnRandom.Location = new System.Drawing.Point(12, 12);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(75, 23);
+            this.btnRandom.TabIndex = 1;
+            this.btnRandom.Text = "Random";
+            this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
             // tabControl1
             // 
@@ -92,7 +93,7 @@
             this.tabPoints.Location = new System.Drawing.Point(4, 25);
             this.tabPoints.Name = "tabPoints";
             this.tabPoints.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoints.Size = new System.Drawing.Size(504, 475);
+            this.tabPoints.Size = new System.Drawing.Size(504, 489);
             this.tabPoints.TabIndex = 1;
             this.tabPoints.Text = "Puntos";
             this.tabPoints.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@
             this.gridPoints.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridPoints.Location = new System.Drawing.Point(3, 3);
             this.gridPoints.Name = "gridPoints";
-            this.gridPoints.Size = new System.Drawing.Size(498, 469);
+            this.gridPoints.Size = new System.Drawing.Size(498, 483);
             this.gridPoints.TabIndex = 0;
             // 
             // tabRectangles
@@ -112,7 +113,7 @@
             this.tabRectangles.Controls.Add(this.gridRectangles);
             this.tabRectangles.Location = new System.Drawing.Point(4, 25);
             this.tabRectangles.Name = "tabRectangles";
-            this.tabRectangles.Size = new System.Drawing.Size(504, 475);
+            this.tabRectangles.Size = new System.Drawing.Size(504, 489);
             this.tabRectangles.TabIndex = 2;
             this.tabRectangles.Text = "Rectángulos";
             this.tabRectangles.UseVisualStyleBackColor = true;
@@ -124,16 +125,27 @@
             this.gridRectangles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridRectangles.Location = new System.Drawing.Point(0, 0);
             this.gridRectangles.Name = "gridRectangles";
-            this.gridRectangles.Size = new System.Drawing.Size(504, 475);
+            this.gridRectangles.Size = new System.Drawing.Size(504, 489);
             this.gridRectangles.TabIndex = 1;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(93, 12);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 3;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 571);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnGo);
+            this.Controls.Add(this.btnRandom);
             this.Name = "MainForm";
             this.Text = "Rectángulos";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
@@ -148,7 +160,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.Button btnRandom;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabGraph;
         private System.Windows.Forms.Panel pnlCanvas;
@@ -156,5 +168,6 @@
         private System.Windows.Forms.TabPage tabRectangles;
         private System.Windows.Forms.DataGridView gridPoints;
         private System.Windows.Forms.DataGridView gridRectangles;
+        private System.Windows.Forms.Button btnLoad;
     }
 }

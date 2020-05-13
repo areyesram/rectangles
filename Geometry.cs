@@ -17,7 +17,8 @@ namespace areyesram
             foreach (var c in candidates)
                 foreach (var b in c.p2)
                     foreach (var a in c.p3)
-                        if (points.Any(o => o.X == a.X && o.Y == b.Y))
+                        if (points.Any(o => o.X == a.X && o.Y == b.Y
+                                            && c.p1.X < a.X && c.p1.Y < b.Y))
                             result.Add(new Rectangle(c.p1.X, c.p1.Y, a.X, b.Y));
             return result.ToArray();
         }

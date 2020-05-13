@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,17 +10,35 @@ namespace areyesram
     public partial class MainForm : Form
     {
         private static Rectangle[] _rectangles;
-        private Point[] _points;
+        private static Point[] _points;
 
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void btnGo_Click(object sender, EventArgs e)
+        private void btnRandom_Click(object sender, EventArgs e)
         {
             var rnd = new Random();
             _points = Enumerable.Range(0, 200).Select(o => new Point(rnd.Next(100) * 5, rnd.Next(100) * 5)).ToArray();
+            FindRectangles();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            _points = File.ReadAllLines(@"data\sample.csv")
+                .Distinct()
+                .Select(o =>
+                {
+                    var a = o.Split(',');
+                    return new Point(int.Parse(a[0]), int.Parse(a[1]));
+                })
+                .ToArray();
+            FindRectangles();
+        }
+
+        private void FindRectangles()
+        {
             _rectangles = Geometry.FindRectangles(_points);
             gridPoints.DataSource = _points;
             gridRectangles.DataSource = _rectangles;
