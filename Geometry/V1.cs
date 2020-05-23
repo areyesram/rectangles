@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace areyesram
+namespace areyesram.Geometry
 {
-    public class Geometry
+    public class V1: IFinder
     {
-        public static Rectangle[] FindRectangles(Point[] points)
+        public Rectangle[] FindRectangles(Point[] points)
         {
             var unique = points.Distinct().ToArray();
             var candidates = unique

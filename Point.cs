@@ -4,8 +4,8 @@ namespace areyesram
 {
     public class Point
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int X { get; }
+        public int Y { get; }
 
         public Point(int x, int y)
         {
@@ -22,7 +22,7 @@ namespace areyesram
 
         public override int GetHashCode()
         {
-            return (X + "," + Y).GetHashCode();
+            return (Y << 16) | X;    //hash function for lookup
         }
     }
 }
